@@ -1,7 +1,8 @@
-export const LASERS = 'LASERS';
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
 
-export const allLasers = () => {
-    return async (dispatch, getState) => {
-        dispatch({ type: LASERS });
-    }
+export function increment() {
+  return { type: INCREMENT };
 }
+
+export const decrement = () => ({ type: DECREMENT });

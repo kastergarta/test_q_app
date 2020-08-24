@@ -1,32 +1,46 @@
-import React, { useState } from 'react';
-//import { Link } from 'react-router-dom';
-import { Data } from '../data/data.js';
-//import { findAllByTitle } from '@testing-library/react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { increment, decrement } from '../store/actions';
 
-function QuizContainer(){
-
-  const [localstate, setLocalstate] = useState('');
-  //console.log(allAnswers);
+class QuizContainer extends React.Component {
   
-  return (
+  state = {
+    counter: 0
+  }
+
+  increment = () => {
+    this.props.increment();
+  }
+
+  decrement = () => {
+    this.props.decrement();
+  }
+
+  render(){
+    return (
+      <div className="counter">
+      <h2>Counter</h2>
       <div>
-          <h1>Quiz Container Here</h1>
-          <div onClick={activateLasers}>CLICK!</div>
+        <button onClick={this.decrement}>-</button>
+        <div className="count">{
+          this.props.count
+        }</div>
+        <button onClick={this.increment}>+</button>
       </div>
-  )
+    </div>
+    )
+  }
 };
 
 const mapStateToProps = state => {
   return {
-      ctr: localstate.title
+      count: state.count
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    activateLasers: () => dispatch({type: 'LASERS'})
-  };
+const mapDispatchToProps = {
+  increment,
+  decrement
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizContainer);

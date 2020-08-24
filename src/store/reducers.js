@@ -1,18 +1,27 @@
 import { LASERS } from './actions'
 
 const initialState = {
-    title: 'JS Quiz'
-    //questions: ['What?', 'Where?', 'When?']
+    count: 0
 }
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case LASERS: 
+function reducer(state = initialState, action) {
+  
+    switch(action.type) {
+      case 'INCREMENT':
         return {
-        return 5
-        }
+          count: state.count + 1
+        };
+      case 'DECREMENT':
+        return {
+          count: state.count - 1
+        };
+      case 'RESET':
+        return {
+          count: 0
+        };
+      default:
         return state;
-      }
-};
+    }
+  }
 
 export default reducer; 
