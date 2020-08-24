@@ -7,12 +7,12 @@ import { connect } from 'react-redux';
 function QuizContainer(){
 
   const [localstate, setLocalstate] = useState('');
-  console.log(allAnswers);
+  //console.log(allAnswers);
   
   return (
       <div>
           <h1>Quiz Container Here</h1>
-          <p> </p>
+          <div onClick={activateLasers}>CLICK!</div>
       </div>
   )
 };
@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onIncrementCounter: () => dispatch({type: 'INCREMENT'})
+    activateLasers: () => dispatch({type: 'LASERS'})
   };
 };
 
