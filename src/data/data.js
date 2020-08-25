@@ -1,11 +1,11 @@
-export const Data = [
+const Data = 
     {
       title: 'Basics of HTML',
       questions: [
         {
           text: 'Which element is used for a top-level heading?',
+          answers: ['div', 'h0', 'h1', 'p'],
           correctAnswer: 'h1',
-          incorrectAnswers: ['div', 'h0', 'p'],
         },
         {
           text: 'Which element is used for a page break?',
@@ -31,31 +31,6 @@ export const Data = [
           ],
         },
       ],
-    },
-    {
-      title: 'Basics of CSS',
-      questions: [
-        {
-          text: 'Which markup correctly assigns HTML element a CSS class?',
-          correctAnswer: "<div class='cat'>hi</div>",
-          incorrectAnswers: [
-            "<div className='cat'>hi</div>",
-            "<div>hi</div className='cat'>",
-            "<div class='cat'>hi</div class='cat'>",
-          ],
-        },
-        {
-          text:
-            'Which markup is CSS that sets all cat classes to have pink font?',
-          correctAnswer: '.cat { color: pink; }',
-          incorrectAnswers: ['cat { color: pink; }', '<cat> color: pink; </cat>'],
-        },
-        {
-          text:
-            'Which markup is CSS that sets all elements of id "dog" to be bold?',
-          correctAnswer: '#dog { font-weight: bold; }',
-          incorrectAnswers: ['dog { weight: bold; }', '.dog { font: bold; }'],
-        },
-      ],
-    },
-  ];
+    }
+    
+  export default Data;

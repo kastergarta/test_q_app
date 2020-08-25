@@ -1,10 +1,6 @@
-import { LASERS } from './actions'
+import Data from '../data/data';
 
-const initialState = {
-    count: 0
-}
-
-function reducer(state = initialState, action) {
+function reducer(state = Data, action) {
   
     switch(action.type) {
       case 'INCREMENT':
@@ -14,10 +10,6 @@ function reducer(state = initialState, action) {
       case 'DECREMENT':
         return {
           count: state.count - 1
-        };
-      case 'RESET':
-        return {
-          count: 0
         };
       default:
         return state;
